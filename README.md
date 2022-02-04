@@ -1,2 +1,2 @@
 # SwiftBook-HW
-## Vasiliy Usov SwiftBook
+## Vasiliy Usov. SwiftBook. Homework tasks
