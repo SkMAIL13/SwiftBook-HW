@@ -28,10 +28,22 @@ func chessAnalizer (dictionary:Chessman) {
 
 
 //==================================
-//              Execise-2
+//              Exercise-2
 //==================================
 /*
  Создайте функцию, которая предназначена для изменения состава и характеристик фигур в переменной Chessmans . В качестве входных параметров она должна принимать саму пере- менную Chessmans (как сквозной параметр), в которую будут вноситься изменения, имя фигуры (значение типа String) и опциональный кортеж координат фигуры (значение типа (Character, Int)?) .
- При этом должна проводиться проверка факта существования фигуры в словаре . Если фигура не существует, то информация о ней добавляется, в противном случае информация обновля- ется в соответствии с переданной информацией .
+ При этом должна проводиться проверка факта существования фигуры в словаре . Если фигура не существует, то информация о ней добавляется, в противном случае информация обновля- ется в соответствии с переданной информацией . 
  */
+
+func changeFigure (dictionary: inout Chessman, name: String, chessposition: (alpha: Character, num: Int)?) {
+    if dictionary[name] != nil && dictionary[name]! != nil && chessposition != nil {
+        let (alpha, num) = chessposition!
+        dictionary[name]!!.alpha = alpha
+        dictionary[name]!!.num = num
+    } else {
+        dictionary[name] = chessposition
+    }
+}
+changeFigure(dictionary: &dictionary, name: "", chessposition: (alpha: "C", num: 6))
+print(dictionary)
 
